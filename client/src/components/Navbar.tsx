@@ -22,7 +22,7 @@ export const Navbar = () => {
                 }}
             >
 
-                <img style={{ width: "200px", height: "40px", marginRight: "auto" }} src={logo}></img>
+                <img style={{ width: "160px", height: "40px", marginRight: "auto" }} src={logo}></img>
 
                 <NavLink to="/"> Home </NavLink>
 
