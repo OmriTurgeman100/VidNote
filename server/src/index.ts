@@ -15,8 +15,6 @@ app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 app.use("/api/v1/videos", videosRouter);
 
-
-
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
   res.status(500).json({
     status: "error",
