@@ -1,0 +1,40 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import { Home } from "@mui/icons-material";
+import { Sections } from "./pages/Sections";
+import { About } from "./pages/About";
+import { DisplaySection } from "./pages/DisplaySection";
+
+
+function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+
+        <Route path="/" element={<Navbar />}>
+
+          <Route index element={<Home />}></Route>
+
+          <Route path="/about" element={<About />}></Route>
+
+          <Route path="/sections" element={<Sections />}></Route>
+
+          <Route path="/sections/:id" element={<DisplaySection />}></Route>
+
+        </Route>
+
+      </>
+    )
+  )
+
+
+  return <RouterProvider router={router} />;
+}
+
+export default App
