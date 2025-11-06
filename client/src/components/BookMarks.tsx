@@ -155,14 +155,42 @@ export const BookMarks = ({ filename, videoRef, id }: book_marks) => {
 
 
                 {showCreateBookMarks ? (
-                    <IconButton sx={{ backgroundColor: "#28bbff" }} onClick={create_book_mark}>
-                        <Done sx={{ color: "white" }} />
-
+                    <IconButton
+                        onClick={create_book_mark}
+                        sx={{
+                            background: "linear-gradient(135deg, #1e90ff 0%, #00c6ff 100%)",
+                            color: "white",
+                            boxShadow: "0 4px 12px rgba(30, 144, 255, 0.4)",
+                            transition: "all 0.3s ease",
+                            "&:hover": {
+                                background: "linear-gradient(135deg, #007bff 0%, #00aaff 100%)",
+                                boxShadow: "0 6px 18px rgba(0, 170, 255, 0.5)",
+                                transform: "translateY(-2px)",
+                            },
+                            "&:active": {
+                                transform: "scale(0.95)",
+                            },
+                        }}
+                    >
+                        <Done />
                     </IconButton>
                 ) : (
 
-                    <IconButton sx={{ backgroundColor: "#28bbff" }} onClick={handle_create_bookmark}>
-                        <AddIcon sx={{ color: "white" }} />
+                    <IconButton sx={{
+                        background: "linear-gradient(135deg, #1e90ff 0%, #00c6ff 100%)",
+                        color: "white",
+                        boxShadow: "0 4px 12px rgba(30, 144, 255, 0.4)",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                            background: "linear-gradient(135deg, #007bff 0%, #00aaff 100%)",
+                            boxShadow: "0 6px 18px rgba(0, 170, 255, 0.5)",
+                            transform: "translateY(-2px)",
+                        },
+                        "&:active": {
+                            transform: "scale(0.95)",
+                        },
+                    }} onClick={handle_create_bookmark}>
+                        <AddIcon />
                     </IconButton>
                 )}
 
