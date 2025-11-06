@@ -2,6 +2,7 @@
 import { Request, Response, NextFunction } from "express";
 import { CatchAsync } from "../utils/CatchAsync";
 import { initDB } from "../database/database";
+import { deleteFile } from "../utils/DeleteVideo";
 
 export const get_sections = CatchAsync(
   async (_req: Request, res: Response, _next: NextFunction) => {
@@ -229,6 +230,8 @@ export const delete_video = CatchAsync(
 
     await db.run("DELETE FROM videos WHERE id = ?", videoId);
 
+    await deleteFile(video.filename);
+
     res.status(200).json({
       data: video,
     });
@@ -249,9 +252,20 @@ export const delete_section = CatchAsync(
       sectionId
     );
 
-    if (!sectionId) {
+    if (!section) {
       return res.status(404).json({ message: "Section not found" });
     }
+
+    const videos = await db.all(
+      "SELECT * FROM videos WHERE section_id = ?",
+      sectionId
+    );
+
+    for (const video of videos) {
+      await deleteFile(video.filename);
+    }
+
+    await db.run("DELETE FROM videos WHERE section_id = ?", sectionId);
 
     await db.run("DELETE FROM sections WHERE id = ?", sectionId);
 
