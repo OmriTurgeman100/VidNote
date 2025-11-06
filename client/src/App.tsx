@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { Home } from "@mui/icons-material";
+import { Home } from "./pages/Home";
 import { Sections } from "./pages/Sections";
 import { About } from "./pages/About";
 import { DisplaySection } from "./pages/DisplaySection";
