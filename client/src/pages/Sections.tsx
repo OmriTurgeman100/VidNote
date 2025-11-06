@@ -1,9 +1,13 @@
 import { get_sections } from "../services/Videos"
-import { Box, Typography, TextField } from "@mui/material"
+import { Box, Typography, TextField, IconButton } from "@mui/material"
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom"
 import play_icon from "../assets/play_icon.svg"
 import { useTheme } from "@mui/material/styles";
+import { Add, Settings } from "@mui/icons-material";
+import { CreateSection } from "../components/CreateSection";
+import { DeleteSections } from "../components/DeleteSections";
+
 
 interface video_sections {
     id: number,
@@ -17,6 +21,8 @@ export const Sections = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const navigate = useNavigate()
     const theme = useTheme();
+    const [showUpload, setShowUpload] = useState<boolean>(false)
+    const [showDelete, setshowDelete] = useState<boolean>(false)
 
 
     const fetch_sections = async () => {
@@ -47,7 +53,7 @@ export const Sections = () => {
     useEffect(() => {
         fetch_sections()
         handle_ref();
-    }, [])
+    }, [showUpload, showDelete])
 
     return (
         <Box sx={{
@@ -135,6 +141,17 @@ export const Sections = () => {
                 ))}
             </Box>
 
+            <IconButton sx={{ position: "fixed", bottom: "15px", right: "15px", backgroundColor: theme.palette.background.paper }} onClick={() => setShowUpload(true)}>
+                <Add />
+            </IconButton>
+
+            <IconButton sx={{ position: "fixed", bottom: "75px", right: "15px", backgroundColor: theme.palette.background.paper }} onClick={() => setshowDelete(true)}>
+                <Settings />
+            </IconButton>
+
+            <CreateSection openUpload={showUpload} closeUpload={() => setShowUpload(false)}></CreateSection>
+
+            <DeleteSections sections={sections} show_delete={showDelete} close_delete={() => setshowDelete(false)}></DeleteSections>
 
         </Box>
     )
