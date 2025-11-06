@@ -106,13 +106,52 @@ export const DisplaySection = () => {
       </Box>
 
 
-      <IconButton onClick={(() => setShowUpload(true))} sx={{ backgroundColor: "#28bbff", width: "50px", position: "fixed", bottom: 20, right: 20 }}>
-        <FileUploadIcon sx={{ color: "white" }} />
+      <IconButton
+        onClick={() => setShowUpload(true)}
+        sx={{
+          background: "linear-gradient(135deg, #00e0ff, #0078ff)",
+          color: "white",
+          width: 56,
+          height: 56,
+          position: "fixed",
+          bottom: 24,
+          right: 24,
+          borderRadius: "16px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+          transition: "all 0.3s ease",
+          "&:hover": {
+            background: "linear-gradient(135deg, #00c4ff, #0062cc)",
+            transform: "scale(1.08)",
+            boxShadow: "0 6px 18px rgba(0, 0, 0, 0.3)",
+          },
+        }}
+      >
+        <FileUploadIcon sx={{ fontSize: 28 }} />
       </IconButton>
 
-      <IconButton onClick={(() => setShowDelete(true))} sx={{ backgroundColor: "#28bbff", width: "50px", position: "fixed", bottom: 20, right: 90 }}>
-        <Settings sx={{ color: "white" }} />
+      <IconButton
+        onClick={() => setShowDelete(true)}
+        sx={{
+          background: "linear-gradient(135deg, #00e0ff, #0078ff)",
+          color: "white",
+          width: 56,
+          height: 56,
+          position: "fixed",
+          bottom: 24,
+          right: 96,
+          borderRadius: "16px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+          transition: "all 0.3s ease",
+          "&:hover": {
+            background: "linear-gradient(135deg, #00c4ff, #0062cc)",
+            transform: "scale(1.08)",
+            boxShadow: "0 6px 18px rgba(0, 0, 0, 0.3)",
+          },
+        }}
+      >
+        <Settings sx={{ fontSize: 28 }} />
       </IconButton>
+
 
       <UploadVideo section_id={id} show_upload={showUpload} close_upload={() => setShowUpload(false)}></UploadVideo>
 
