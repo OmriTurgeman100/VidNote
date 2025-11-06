@@ -5,22 +5,26 @@
 }
 
 a {
-  color: black;
-  font-size: 18px;
   text-decoration: none;
+  color: #1e90ff;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #28bbff;
+  background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 0 6px 18px rgba(0, 160, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 .active {
+  background: linear-gradient(135deg, #007bff 0%, #00bcd4 100%);
   color: white;
-  background-color: #28bbff;
   border-radius: 8px;
   padding: 6px 12px;
-  box-shadow: 0 4px 8px rgba(40, 187, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 140, 255, 0.45);
   text-decoration: none;
   transform: scale(1.05);
 }
