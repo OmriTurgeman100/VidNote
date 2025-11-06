@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import logo from "../assets/navbar_logo.svg"
 
@@ -22,7 +22,20 @@ export const Navbar = () => {
                 }}
             >
 
-                <img style={{ width: "160px", height: "40px", marginRight: "auto" }} src={logo}></img>
+                <Typography
+                    sx={{
+                        marginRight: "auto",
+                        fontWeight: "bold",
+                        fontSize: "20px",
+                        background: "linear-gradient(90deg, #00B4DB, #0083B0, #006494)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                    }}
+                >
+                    VIDNOTE
+                </Typography>
+
+
 
                 <NavLink to="/"> Home </NavLink>
 
