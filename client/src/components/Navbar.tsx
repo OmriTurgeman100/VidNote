@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import logo from "../assets/navbar_logo.svg"
+// import logo from "../assets/navbar_logo.svg"
 
 export const Navbar = () => {
     const theme = useTheme();
