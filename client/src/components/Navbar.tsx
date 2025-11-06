@@ -41,7 +41,6 @@ export const Navbar = () => {
 
                 <NavLink to="/sections"> Sections </NavLink>
 
-                <NavLink to="/about">About</NavLink>
 
             </Box>
 

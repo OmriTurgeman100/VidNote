@@ -7,7 +7,6 @@ import {
 import { Navbar } from "./components/Navbar";
 import { Home } from "./pages/Home";
 import { Sections } from "./pages/Sections";
-import { About } from "./pages/About";
 import { DisplaySection } from "./pages/DisplaySection";
 
 
@@ -20,8 +19,6 @@ function App() {
         <Route path="/" element={<Navbar />}>
 
           <Route index element={<Home />}></Route>
-
-          <Route path="/about" element={<About />}></Route>
 
           <Route path="/sections" element={<Sections />}></Route>
 
