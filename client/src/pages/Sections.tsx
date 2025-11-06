@@ -51,7 +51,11 @@ export const Sections = () => {
 
     return (
         <Box sx={{
-            height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", background: "linear-gradient(135deg, #ffffff 0%, rgba(206, 236, 255, 1) 100%)",
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            background: "linear-gradient(135deg, #ffffff 0%, rgba(206, 236, 255, 1) 100%)",
             boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
         }}>
             <Typography
@@ -100,7 +104,6 @@ export const Sections = () => {
                 placeholder="Search..."
             />
 
-
             <Box sx={{ width: "700px", height: "fit-content", marginTop: "15px", display: "flex", gap: 2, flexWrap: "wrap", padding: 2 }}>
                 {sections_data.map((item) => (
 
@@ -131,7 +134,6 @@ export const Sections = () => {
 
                 ))}
             </Box>
-
 
 
         </Box>

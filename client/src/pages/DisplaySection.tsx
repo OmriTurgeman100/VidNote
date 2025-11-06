@@ -105,6 +105,7 @@ export const DisplaySection = () => {
         ))}
       </Box>
 
+
       <IconButton onClick={(() => setShowUpload(true))} sx={{ backgroundColor: "#28bbff", width: "50px", position: "fixed", bottom: 20, right: 20 }}>
         <FileUploadIcon sx={{ color: "white" }} />
       </IconButton>
@@ -116,6 +117,8 @@ export const DisplaySection = () => {
       <UploadVideo section_id={id} show_upload={showUpload} close_upload={() => setShowUpload(false)}></UploadVideo>
 
       <DeleteVideos videos={sectionVideos} show_delete={showDelete} close_delete={() => setShowDelete(false)}></DeleteVideos>
+
+
 
     </Box>
   )
