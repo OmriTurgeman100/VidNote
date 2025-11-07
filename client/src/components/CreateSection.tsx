@@ -3,12 +3,8 @@ import {
     DialogContent,
     IconButton,
     Box,
-    Typography,
     DialogTitle,
-    DialogActions,
     TextField,
-    Button,
-
 } from "@mui/material";
 import { useState } from "react";
 import { create_section } from "../services/Videos";
