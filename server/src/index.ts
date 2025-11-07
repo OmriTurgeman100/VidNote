@@ -1,5 +1,5 @@
 import express from "express";
-import { initDB } from "../src/database/database";
+import { initDB } from "./database/database"; 
 import videosRouter from "./routes/videosRouter";
 import { Request, Response, NextFunction } from "express";
 import path from "path";
