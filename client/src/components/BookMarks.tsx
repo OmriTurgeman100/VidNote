@@ -132,6 +132,7 @@ export const BookMarks = ({ filename, videoRef, id }: book_marks) => {
 
     useEffect(() => {
         fetch_video_book_marks()
+        console.log(filename)
     }, [id, showCreateBookMarks, editBookMark, refreshDelete])
 
     return (
