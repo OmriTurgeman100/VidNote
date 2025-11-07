@@ -24,13 +24,16 @@ projects = [
 
 
 def execute_program(project):
-    folder = project["path"]
+    try:
+        folder = project["path"]
 
-    print(f"\n📁 Working in: {folder}")
+        print(f"\n📁 Working in: {folder}")
 
-    subprocess.run(project["install"], cwd=folder, check=True, shell=True)
+        subprocess.run(project["install"], cwd=folder, check=True, shell=True, stdout=subprocess.DEVNULL,  stderr=subprocess.DEVNULL)
 
-    subprocess.run(project["start"], cwd=folder, check=True, shell=True)
+        subprocess.run(project["start"], cwd=folder, check=True, shell=True, stdout=subprocess.DEVNULL,  stderr=subprocess.DEVNULL)
+    except Exception as e:
+        None
 
 
 if __name__ == '__main__':
