@@ -50,7 +50,7 @@ export const DeleteSections = ({ sections, show_delete, close_delete }: PropsDat
             <DialogContent>
 
                 {sections.map((item) => (
-                    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <Box key={item.id} sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
                         <Typography sx={{ fontSize: "19px" }}>
                             {item.name}

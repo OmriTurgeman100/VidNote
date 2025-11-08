@@ -49,7 +49,7 @@ export const DeleteVideos = ({ videos, show_delete, close_delete }: PropsData) =
       <DialogContent>
 
         {videos.map((item) => (
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <Box key={item.id} sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
             <Typography sx={{ fontSize: "19px" }}>
               {item.title}
