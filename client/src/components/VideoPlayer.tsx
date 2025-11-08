@@ -102,9 +102,6 @@ export const VideoPlayer = ({ filename, id }: video_player) => {
   }
 
   const handleVolumeChange = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-
-    console.log(e.currentTarget.volume)
-
     localStorage.setItem("video-volume", String(e.currentTarget.volume))
   }
 
