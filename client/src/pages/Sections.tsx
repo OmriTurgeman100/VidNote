@@ -113,7 +113,7 @@ export const Sections = () => {
             <Box sx={{ width: "700px", height: "fit-content", marginTop: "15px", display: "flex", gap: 2, flexWrap: "wrap", padding: 2 }}>
                 {sections_data.map((item) => (
 
-                    <Box onClick={() => navigate(`/sections/${item.id}`)} sx={{
+                    <Box key={item.id} onClick={() => navigate(`/sections/${item.id}`)} sx={{
                         backgroundColor: theme.palette.background.paper,
                         width: "200px",
                         height: "100px",
