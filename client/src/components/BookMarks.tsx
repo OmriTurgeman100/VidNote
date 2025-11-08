@@ -218,7 +218,7 @@ export const BookMarks = ({ filename, videoRef, id }: book_marks) => {
                 <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
 
                     {videoBookMarks.map((item) => (
-                        <Box sx={{
+                        <Box key={item.id} sx={{
                             cursor: "pointer",
                             width: "100%",
                             height: "80px",
