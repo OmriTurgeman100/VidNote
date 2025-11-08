@@ -22,8 +22,8 @@ export const VideoPlayer = ({ filename, id }: video_player) => {
   const HOLD_THRESHOLD = 150 // ms – adjust if you want
 
   const startHoldTimer = () => {
-    const video = videoRef.current
-    if (!video) return
+
+    if (!videoRef.current) return
 
     // Clear existing timer just in case
     if (holdTimerRef.current !== null) {
@@ -37,8 +37,8 @@ export const VideoPlayer = ({ filename, id }: video_player) => {
       holdActiveRef.current = true
       suppressClickRef.current = true
 
-      previousRateRef.current = video.playbackRate || 1
-      video.playbackRate = 2
+      previousRateRef.current = videoRef.current.playbackRate || 1
+      videoRef.current.playbackRate = 2
     }, HOLD_THRESHOLD)
   }
 
@@ -66,12 +66,11 @@ export const VideoPlayer = ({ filename, id }: video_player) => {
     isMouseDownRef.current = false
     clearHoldTimer()
 
-    const video = videoRef.current
-    if (!video) return
+    if (!videoRef.current) return
 
     // If we were in a hold, restore the previous rate
     if (holdActiveRef.current) {
-      video.playbackRate = previousRateRef.current || 1
+      videoRef.current.playbackRate = previousRateRef.current || 1
       // Don't reset suppressClickRef here – click handler will use it
     }
   }
@@ -80,11 +79,10 @@ export const VideoPlayer = ({ filename, id }: video_player) => {
     isMouseDownRef.current = false
     clearHoldTimer()
 
-    const video = videoRef.current
-    if (!video) return
+    if (!videoRef.current) return
 
     if (holdActiveRef.current) {
-      video.playbackRate = previousRateRef.current || 1
+      videoRef.current.playbackRate = previousRateRef.current || 1
     }
 
     holdActiveRef.current = false
