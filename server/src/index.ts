@@ -1,5 +1,5 @@
 import express from "express";
-import { initDB } from "./database/database"; 
+import { initDB } from "./database/database";
 import videosRouter from "./routes/videosRouter";
 import { Request, Response, NextFunction } from "express";
 import path from "path";
@@ -20,6 +20,12 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
     status: "error",
     message: error.message,
   });
+});
+
+app.use(express.static(path.join(__dirname, "../../client/dist")));
+
+app.get(/.*/, (_req, res) => {
+  res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
 });
 
 app.listen(port, async () => {
