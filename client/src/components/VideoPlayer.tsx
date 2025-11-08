@@ -1,6 +1,7 @@
 import { Box } from "@mui/material"
 import { useRef } from "react"
 import { BookMarks } from "./BookMarks"
+import { useEffect } from "react"
 
 interface video_player {
   id: number | undefined
@@ -100,6 +101,18 @@ export const VideoPlayer = ({ filename, id }: video_player) => {
     // If not a hold, this is just a normal click: let browser toggle play/pause
   }
 
+  const handleVolumeChange = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+
+    console.log(e.currentTarget.volume)
+
+    localStorage.setItem("video-volume", String(e.currentTarget.volume))
+  }
+
+  useEffect(() => {
+    if (videoRef.current)
+      videoRef.current.volume = Number(localStorage.getItem("video-volume")) || 0
+  }, [])
+
   return (
     <Box
       sx={{
@@ -121,6 +134,7 @@ export const VideoPlayer = ({ filename, id }: video_player) => {
           onMouseUp={handleMouseUp} // * The mouse button is released over an element
           onMouseLeave={handleMouseLeave} // * The pointer is moved out of an element
           onClick={handleClick}
+          onVolumeChange={handleVolumeChange}
         />
       </Box>
 
